@@ -1,0 +1,23 @@
+<div class="text-center">
+  <%= link_to 'Add new gossip', new_gossip_path, class:'btn btn-success' %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @gossip.each do |gossip| %>
+    <div class="col-4">
+      <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+      <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+        <div class="text-center", style='color:white;'><i class="fas fa-user"></i></i></div>
+        <div class="card-body">
+          <h5 class="card-title"><%= gossip.title %></h5>
+          <p class="card-text"><%= gossip.content %></p>
+          <p><%= link_to 'Show', gossip_path(gossip.id), class:'btn btn-primary' %>
+          <%= link_to 'Edit', edit_gossip_path(gossip.id), class:'btn btn-warning' %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  </div>
+</div>

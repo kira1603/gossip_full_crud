@@ -1,0 +1,5 @@
+<%= @comment.title %>
+<%= @comment.content %>
+
+<%= link_to 'Edit', edit_comment_path(@comment.id) %>
+<%= link_to 'Back', comment_path(@comment.id) %>

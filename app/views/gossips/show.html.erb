@@ -1,0 +1,28 @@
+
+<div class="container">
+    <div class="text-center">
+      <div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+          <div class="card text-white bg-warning mb-3" style="max-width: 100%;">
+            <div class="card-header"><i class="fas fa-user-secret"></i></div>
+            <div class="card-body">
+              <h5 class="card-title"><%= @gossip.title %></h5>
+              <p class="card-text"><%= @gossip.content %></p>
+              </div>
+              <%= link_to 'Edit', edit_gossip_path(@gossip.id) %>
+              <%= link_to 'Back', gossips_path %>
+          </div
+        </div>
+    </div>
+</div>
+
+<h1>Les Commentaires</h1>
+
+<% @comment.each do |comment| %>
+
+  <p><%= comment.content %></p>
+
+<% end %>
+
+<div class="text-center">
+  <%= link_to 'Add new Comment', new_comment_path, class:'btn btn-default' %>
+</div>
